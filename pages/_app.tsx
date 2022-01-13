@@ -1,6 +1,10 @@
 import Head from 'next/head'
-import '../styles/globals.css'
 
+import '../styles/globals.css'
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
@@ -13,8 +17,7 @@ export default function MyApp({ Component, pageProps }) {
         />
         <meta name="description" content="Description" />
         <meta name="keywords" content="Keywords" />
-        <title>Next.js PWA Example</title>
-
+        <title>Hill Shop</title>
         <link rel="manifest" href="/manifest.json" />
         <link
           href="/icons/favicon-16x16.png"
@@ -28,8 +31,6 @@ export default function MyApp({ Component, pageProps }) {
           type="image/png"
           sizes="32x32"
         />
-        <link rel="apple-touch-icon" href="/apple-icon.png"></link>
-        <meta name="theme-color" content="#317EFB" />
       </Head>
       <Component {...pageProps} />
     </>
