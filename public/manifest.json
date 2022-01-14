@@ -16,8 +16,9 @@
       "url": "/montanhas?source=pwa",
       "icons": [
         {
-          "src": "/hill.svg",
-          "sizes": "512x512"
+          "src": "/everest.png",
+          "type": "image/png",
+          "sizes": "192x192"
         }
       ]
     }
