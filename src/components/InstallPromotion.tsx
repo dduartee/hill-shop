@@ -1,20 +1,39 @@
 import ShowInstallPromotionContext from "@contexts/installPromotion"
 import useInstallPrompt from "@hooks/useInstallPrompt";
-import { Button, Snackbar, SnackbarContent } from "@mui/material";
-import { useContext, useEffect, useState } from "react"
+import { Button, NoSsr, Snackbar, SnackbarContent } from "@mui/material";
+import loadable from '@loadable/component'
+import IosShareIcon from '@mui/icons-material/IosShare';
+import AddBoxIcon from '@mui/icons-material/AddBox';
+const PWAPrompt = loadable(() => import("react-ios-pwa-prompt"))
 
 const InstallPromotion = () => {
-    const {showInstallPromotion, setShowInstallPromotion, deferredPrompt, setDeferredPrompt} = useInstallPrompt()
+    const {showInstallPromotion, showInstallPromotionIOS, deferredPrompt, setDeferredPrompt} = useInstallPrompt()
     return (
-        <>
-            {showInstallPromotion && (
+        <NoSsr>
+            {showInstallPromotion ? (
                 <Snackbar anchorOrigin={{vertical: "bottom", horizontal: "left"}} open={showInstallPromotion}>
                     <SnackbarContent message="Instale o app!" action={<Button color="info" onClick={installPromotionHandler()}>
                 Instalar
             </Button>} />
                 </Snackbar>
-            )}
-        </>
+            ): (showInstallPromotionIOS ? (
+                <PWAPrompt 
+                copyTitle={"Adicione o app na tela de início"}
+                copyBody={`
+                Instale o app e melhore a sua experiência.
+                `}
+                copyShareButtonLabel={`
+                1) Toque em "Compartilhar"
+                `}
+                copyAddHomeButtonLabel={`
+                2) Deslize para a esquerda, e toque em "Adicionar à tela de início"
+                `}
+                copyClosePrompt={"Fechar, não vamos mais mostrar essa mensagem"}
+                permanentlyHideOnDismiss={false}
+                timesToShow={3}
+                 />
+            ): null)}
+        </NoSsr>
     )
 
     function installPromotionHandler() {

@@ -19,7 +19,7 @@ export default class MyDocument extends Document {
               rel="icon"
             />
             <link rel="apple-touch-icon" href="/icons/regular_icon_x57.png" />
-            
+            <meta name="apple-mobile-web-app-capable" content="yes" />
             <link
               rel="stylesheet"
               href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"

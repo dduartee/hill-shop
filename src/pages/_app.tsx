@@ -20,7 +20,6 @@ export default function MyApp(props: MyAppProps) {
   React.useEffect( () => {
     loadServiceWorker()
   }, []);
-  
   return (
     <CacheProvider value={emotionCache}>
       <Head>
