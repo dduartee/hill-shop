@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
-import theme from '../src/theme';
-import createEmotionCache from '../src/createEmotionCache';
+import theme from '../styles/theme';
+import createEmotionCache from '../createEmotionCache';
 
 export default class MyDocument extends Document {
   render() {
@@ -13,23 +13,22 @@ export default class MyDocument extends Document {
             <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
             
             <meta name="description" content="Sua loja de equipamentos de escalada" />
-            <meta name="keywords" content="Keywords" />
             <link rel="manifest" href="/manifest.json" />
             <link
               href="/favicon.ico"
               rel="icon"
             />
-            {/* PWA primary color */}
-            <meta name="theme-color" content={theme.palette.primary.main} />
-            {/* PWA splash screen */}
-            <link rel="apple-touch-icon" href="/splash.png" />
+            <link rel="apple-touch-icon" href="/icons/regular_icon_x57.png" />
             
             <link
               rel="stylesheet"
               href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
             />
+            {/* PWA primary color */}
+            <meta name="theme-color" content={theme.palette.primary.main} />
             {/* Inject MUI styles first to match with the prepend: true configuration. */}
             {(this.props as any).emotionStyleTags}
+            
         </Head>
         <body>
           <Main />
