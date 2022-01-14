@@ -5,6 +5,7 @@
   "background_color": "#ffffff",
   "display": "standalone",
   "orientation": "portrait",
+  "prefer_related_applications": false,
   "scope": "/",
   "start_url": "/?source=pwa",
   "splash_pages": null,
