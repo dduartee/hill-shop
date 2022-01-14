@@ -1,18 +1,32 @@
 {
-  "name": "HILL-SHOP",
   "short_name": "Hill Shop!",
-  "theme_color": "#000000",
+  "name": "Hill Shop: Imagine aqui uma frase chocante!",
+  "description": "Sua loja de equipamentos de escalada",
   "background_color": "#ffffff",
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
-  "start_url": "/",
-  "icons": [
+  "start_url": "/?source=pwa",
+  "splash_pages": null,
+  "shortcuts": [
     {
-      "src": "hill.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
+      "name": "Qual montanha devo escalar?",
+      "short_name": "Montanhas",
+      "description": "Escolha a sua proxima montanha",
+      "url": "/montanhas?source=pwa",
+      "icons": [
+        {
+          "src": "/hill.svg",
+          "sizes": "512x512"
+        }
+      ]
     }
   ],
-  "splash_pages": null
+  "icons": [
+    {
+      "src": "/hill.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ]
 }
