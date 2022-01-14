@@ -12,7 +12,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/cache": "^11.7.1",
     "@emotion/react": "^11.7.1",
+    "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.6.0",
     "@fontsource/roboto": "^4.5.1",
     "@mui/icons-material": "^5.2.5",
