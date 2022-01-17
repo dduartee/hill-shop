@@ -8,11 +8,11 @@ const isInStandaloneMode = () => (('standalone' in window.navigator) && (window.
 
 const UseInstallPrompt = () => {
     const [showInstallPromotion, setShowInstallPromotion] = useState(false);
-    const [showInstallPromotionIOS, setShowInstallPromotionIOS] = useState(false);
+    const [showGuidePromotionIOS, setShowGuidePromotionIOS] = useState(false);
     const [deferredPrompt, setDeferredPrompt] = useState<any>(undefined)
     useEffect(() => {
         if(isIos() && !isInStandaloneMode()) {
-            setShowInstallPromotionIOS(true);
+            setShowInstallPromotion(true)
         } else {
             window.addEventListener("beforeinstallprompt", (e) => {
                 // Prevent the mini-infobar from appearing on mobile
@@ -41,10 +41,11 @@ const UseInstallPrompt = () => {
     return {
         showInstallPromotion, 
         setShowInstallPromotion,
-        showInstallPromotionIOS,
-        setShowInstallPromotionIOS,
+        showGuidePromotionIOS,
+        setShowGuidePromotionIOS,
         deferredPrompt,
-        setDeferredPrompt
+        setDeferredPrompt,
+        isIos: isIos()
     }
 }
 
